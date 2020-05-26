@@ -52,4 +52,4 @@ plt.show()
 # plt.show()
 
 # Save processed image
-#mpimg.imsave("test-after.png", color_select)
+mpimg.imsave("test-l2.8.png", region_select)
