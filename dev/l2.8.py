@@ -14,7 +14,7 @@ color_select = np.copy(image)
 line_image = np.copy(image)
 base_center_pos = xsize/2
 lane_width_from_center = 450
-
+road_hoizon_level = 400
 
 # Define color selection criteria
 # MODIFY THESE VARIABLES TO MAKE YOUR COLOR SELECTION
@@ -30,7 +30,7 @@ rgb_threshold = [red_threshold, green_threshold, blue_threshold]
 # WHERE THE LANE LINES ARE IN THE IMAGE
 left_bottom = [base_center_pos-lane_width_from_center, ysize-1]
 right_bottom = [base_center_pos+lane_width_from_center, ysize-1]
-apex = [475, 320]
+apex = [base_center_pos, road_hoizon_level]
 
 # Perform a linear fit (y=Ax+B) to each of the three sides of the triangle
 # np.polyfit returns the coefficients [A, B] of the fit
