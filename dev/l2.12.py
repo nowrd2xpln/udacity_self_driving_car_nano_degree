@@ -2,6 +2,7 @@
 
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import cv2  #bringing in OpenCV libraries
 
 # Read in the image
 image = mpimg.imread('exit-ramp.jpg')
