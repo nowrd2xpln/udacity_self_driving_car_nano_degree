@@ -44,6 +44,9 @@ color_thresholds = (image[:,:,0] < rgb_threshold[0]) | \
                     (image[:,:,2] < rgb_threshold[2])
 
 # Find the region inside the lines
+# Matplotlib has rescaled the 8 bit data from each channel to floating point
+# data between 0.0 and 1.0.
+# https://matplotlib.org/1.5.3/Matplotlib.pdf
 XX, YY = np.meshgrid(np.arange(0, xsize), np.arange(0, ysize))
 print('fit_left: ', type(fit_left), '\n', fit_left)
 print('XX*fit_left[0]: ', type(fit_left[0]), '\n', fit_left[0])
