@@ -63,10 +63,13 @@ color_select[color_thresholds | ~region_thresholds] = [0, 0, 0]
 print('color_select: ', type(color_select), '\n', color_select)
 plt.imshow(color_select)
 plt.show()
+print('color_thresholds: ', type(color_thresholds), '\n', color_thresholds)
 plt.imshow(color_thresholds)
 plt.show()
+print('region_thresholds: ', type(region_thresholds), '\n', region_thresholds)
 plt.imshow(region_thresholds)
 plt.show()
+print('~region_thresholds: ', type(~region_thresholds), '\n', ~region_thresholds)
 plt.imshow(~region_thresholds)
 plt.show()
 # Color pixels red where both color and region selections met
