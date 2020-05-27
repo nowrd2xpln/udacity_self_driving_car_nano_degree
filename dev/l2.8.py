@@ -60,6 +60,15 @@ region_thresholds = (YY > (XX*fit_left[0] + fit_left[1])) & \
 
 # Mask color and region selection
 color_select[color_thresholds | ~region_thresholds] = [0, 0, 0]
+print('color_select: ', type(color_select), '\n', color_select)
+plt.imshow(color_select)
+plt.show()
+plt.imshow(color_thresholds)
+plt.show()
+plt.imshow(region_thresholds)
+plt.show()
+plt.imshow(~region_thresholds)
+plt.show()
 # Color pixels red where both color and region selections met
 line_image[~color_thresholds & region_thresholds] = [255, 0, 0]
 
@@ -67,7 +76,8 @@ line_image[~color_thresholds & region_thresholds] = [255, 0, 0]
 plt.imshow(image)
 x = [left_bottom[0], right_bottom[0], apex[0], left_bottom[0]]
 y = [left_bottom[1], right_bottom[1], apex[1], left_bottom[1]]
-plt.plot(x, y, 'b--', lw=4)
+plt.plot(x, y, 'b--', lw=2)
 plt.imshow(color_select)
 plt.imshow(line_image)
 plt.show()
+mpimg.imsave("test-l2.8-after.png", color_select)
