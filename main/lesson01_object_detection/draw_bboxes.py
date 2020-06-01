@@ -23,7 +23,8 @@ def draw_boxes(img, bboxes, color=(0, 0, 255), thick=6):
     # return the image copy with boxes drawn
     return draw_img # Change this line to return image copy with boxes
 # Add bounding boxes in this format, these are just example coordinates.
-bboxes = [((100, 100), (200, 200)), ((300, 300), (400, 400))]
+bboxes = [((250, 500), (400, 575)), ((450, 500), (550, 575)), ((590, 500), (635, 550)),
+            ((825, 500), (1125, 675))]
 
 result = draw_boxes(image, bboxes)
 plt.imshow(result)
