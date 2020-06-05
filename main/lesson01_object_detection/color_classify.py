@@ -11,8 +11,9 @@ from sklearn.preprocessing import StandardScaler
 # NOTE: the next import is only valid
 # for scikit-learn version <= 0.17
 # if you are using scikit-learn >= 0.18 then use this:
-# from sklearn.model_selection import train_test_split
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
+#from sklearn.cross_validation import train_test_split
+import sklearn
 
 # Define a function to compute binned color features
 def bin_spatial(img, size=(32, 32)):
@@ -62,7 +63,7 @@ def extract_features(imgs, cspace='RGB', spatial_size=(32, 32),
     # Return list of feature vectors
     return features
 
-
+print(sklearn.__version__)
 # Read in car and non-car images
 images = glob.glob('*.jpeg')
 cars = []
@@ -75,7 +76,7 @@ for image in images:
 
 # TODO play with these values to see how your classifier
 # performs under different binning scenarios
-spatial = 32
+spatial = 16
 histbin = 32
 
 car_features = extract_features(cars, cspace='RGB', spatial_size=(spatial, spatial),
