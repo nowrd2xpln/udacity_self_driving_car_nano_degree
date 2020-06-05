@@ -78,9 +78,112 @@ Give an example
 23. Build a Classifier
 24. Labeled Data
 25. Data Preparation
+Need balanced data set or run the risk of classifier trying to predict everything belonging to the majority class.
+
+Need a training set for training and check on unseen examples with test set.
+
+Shuffle data set randomly to avoid any ordering effects.
+
+Always testing your classifier on a separate dataset will prevent against overfitting and provide a more realistic estimate of accuracy and error.
+
+Normalizing ensures that your classifier's behavior isn't dominated by just a subset of the features, and that the training process is as efficient as possible.
+
+To avoid having your algorithm sumply classify everything as belonging to the majority class, prepare a balanced dataset, i.e., have as many positive as negative examples, or in the case of multi-class problems, roughly the same number of cases of each class.
+
+To avoid problems due to ordering of the data, randomly shuffle the data.
+
+To estimate generalization of the model to new data, split the data into a training and testing set.
+
+To avoid individual features of sets of features dominating the response of your classifier, normalize the features to zero mean and unit variance.
 26. Train a Classifier
+Training phase:
+Extract features from training set and supplying feature vectors to the training algorithm.
+The training algorithm initializes a model, and tweaks it's parameters using the feature vectors and labels.
+
 27. Parameter Tuning
+Support Vector Machine vehicle detection model tuning involves searching fro a kernel, a gamma value and a C value that minimize predicition error. 
+Scikit-learn includes two algorithms for auto parameter search, GridSearchCV and RandomizedSearchCV. GridSearchCV works through multiple parameter combinations and cross-validating as it goes. RandomizedSearchCV is similar except it takes a random sample of parameter combinations and is faster.
+GridSearchCV uses 3-fold cross validation to determine the best performing parameter set. It uses accuracy as an error metric by averaging the accuracy for each partition. For every possible parameter combination, GridSearchCV calculates an accuracy score.
+
+Four lines of code for a fitted classifier:
+parameters = {'kernel':('linear', 'rbf'), 'C':[1, 10]}
+svr = svm.SVC()
+clf = grid_search.GridSearchCV(svr, parameters)
+clf.fit(iris.data, iris.target)
+Create parameter.
+Create the SVC (support vector classifier) SVM (support vector machine)
+Create the classifier.
+Try all parameter combinations and return fitted classifier.
+
+The objective of a Linear SVC (Support Vector Classifier) is to fit to the data you provide, returning a "best fit" hyperplane that divides, or categorizes, your data.
+
 28. Color Classify
+Using spatial binning of: 32 and 32 histogram bins
+Feature vector length: 3168
+2.1 Seconds to train SVC...
+Test Accuracy of SVC =  0.9833
+My SVC predicts:  [1. 1. 1. 0. 0. 0. 0. 0. 0. 1.]
+For these 10 labels:  [1. 1. 1. 0. 0. 0. 0. 0. 0. 1.]
+0.0007 Seconds to predict 10 labels with SVC
+Using spatial binning of: 16 and 32 histogram bins
+Feature vector length: 864
+0.4 Seconds to train SVC...
+Test Accuracy of SVC =  0.9875
+My SVC predicts:  [0. 0. 1. 0. 0. 0. 1. 0. 0. 0.]
+For these 10 labels:  [0. 0. 1. 0. 0. 0. 1. 0. 0. 1.]
+0.00069 Seconds to predict 10 labels with SVC
+Using spatial binning of: 8 and 32 histogram bins
+Feature vector length: 288
+0.1 Seconds to train SVC...
+Test Accuracy of SVC =  0.9896
+My SVC predicts:  [0. 0. 1. 0. 1. 0. 1. 0. 0. 1.]
+For these 10 labels:  [0. 0. 1. 0. 1. 0. 1. 0. 0. 1.]
+0.00068 Seconds to predict 10 labels with SVC
+
+Using spatial binning of: 32 and 16 histogram bins
+Feature vector length: 3120
+2.64 Seconds to train SVC...
+Test Accuracy of SVC =  0.9708
+My SVC predicts:  [1. 1. 0. 1. 1. 1. 1. 0. 1. 1.]
+For these 10 labels:  [1. 1. 0. 1. 1. 1. 1. 0. 1. 1.]
+0.0007 Seconds to predict 10 labels with SVC
+Using spatial binning of: 16 and 16 histogram bins
+Feature vector length: 816
+0.66 Seconds to train SVC...
+Test Accuracy of SVC =  0.9812
+My SVC predicts:  [1. 1. 0. 1. 0. 1. 1. 0. 1. 1.]
+For these 10 labels:  [1. 1. 0. 1. 0. 1. 1. 0. 1. 1.]
+0.00117 Seconds to predict 10 labels with SVC
+Using spatial binning of: 8 and 16 histogram bins
+Feature vector length: 240
+0.13 Seconds to train SVC...
+Test Accuracy of SVC =  0.9708
+My SVC predicts:  [0. 1. 1. 1. 0. 0. 1. 0. 1. 1.]
+For these 10 labels:  [0. 1. 1. 1. 0. 1. 1. 0. 1. 1.]
+0.00069 Seconds to predict 10 labels with SVC
+
+Using spatial binning of: 32 and 8 histogram bins
+Feature vector length: 3096
+2.91 Seconds to train SVC...
+Test Accuracy of SVC =  0.9562
+My SVC predicts:  [1. 0. 1. 0. 1. 0. 0. 1. 1. 0.]
+For these 10 labels:  [1. 0. 1. 0. 1. 0. 0. 1. 1. 0.]
+0.0007 Seconds to predict 10 labels with SVC
+Using spatial binning of: 16 and 8 histogram bins
+Feature vector length: 792
+0.49 Seconds to train SVC...
+Test Accuracy of SVC =  0.9582
+My SVC predicts:  [0. 1. 1. 0. 1. 0. 0. 1. 1. 1.]
+For these 10 labels:  [0. 1. 0. 0. 1. 0. 0. 1. 1. 1.]
+0.00067 Seconds to predict 10 labels with SVC
+Using spatial binning of: 8 and 8 histogram bins
+Feature vector length: 216
+0.15 Seconds to train SVC...
+Test Accuracy of SVC =  0.9582
+My SVC predicts:  [0. 0. 1. 1. 0. 1. 1. 1. 0. 1.]
+For these 10 labels:  [0. 0. 1. 1. 0. 1. 1. 1. 0. 1.]
+0.00064 Seconds to predict 10 labels with SVC
+
 29. HOG Classify
 30. Sliding Windows
 31. How many windows?
