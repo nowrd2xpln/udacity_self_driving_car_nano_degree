@@ -23,3 +23,4 @@ edges = cv2.Canny(blur_gray, low_threshold, high_threshold)
 
 # Display the image
 plt.imshow(edges, cmap='Greys_r')
+plt.show()
