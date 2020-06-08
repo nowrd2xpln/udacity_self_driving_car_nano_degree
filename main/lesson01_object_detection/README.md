@@ -118,6 +118,7 @@ Try all parameter combinations and return fitted classifier.
 The objective of a Linear SVC (Support Vector Classifier) is to fit to the data you provide, returning a "best fit" hyperplane that divides, or categorizes, your data.
 
 28. Color Classify
+*** Revisit
 Using spatial binning of: 32 and 32 histogram bins
 Feature vector length: 3168
 2.1 Seconds to train SVC...
@@ -185,6 +186,7 @@ For these 10 labels:  [0. 0. 1. 1. 0. 1. 1. 1. 0. 1.]
 0.00064 Seconds to predict 10 labels with SVC
 
 29. HOG Classify
+*** Revisit
 30. Sliding Windows
 31. How many windows?
 32. Sliding Window Implementation
