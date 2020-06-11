@@ -53,6 +53,27 @@ Give an example
 ```
 
 ## Concepts
+Lesson4: Computer Vison Fundamentals
+1. Power of Cameras
+2. Setting up the Problem
+3. Color Selection
+4. Color Selection Code Example
+5. Quiz: Color Selection
+6. Region Masking
+7. Color and Region Combined
+8. Quiz: Color Region
+9. Finding Lines of Any Colors
+10. What is Computer Vision?
+11. Canny Edge Detection
+12. Canny to Detect Lane Lines
+13. Quiz: Canny Edges
+14. Hough Transform
+15. Hough Transform to Find Lane Lines
+16. Quiz: Hough Transform
+17. Parameter Tuning
+
+Self-Driving Car Engineer Preview 2.0
+Lesson 4: Object Detection
 1. Intro to Vehicle Tracking
 2. Arpan and Drew
 3. Finding Cars
