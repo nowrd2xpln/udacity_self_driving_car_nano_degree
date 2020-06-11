@@ -59,6 +59,8 @@ ImportError: No module named skimage.feature
 
 Fix:
 sudo apt-get install python-skimage
+pip install scikit-image
+pip3install scikit-image
 
 Continued Error:
 ImportError: cannot import name _validate_lengths
@@ -66,5 +68,38 @@ ImportError: cannot import name _validate_lengths
 Fix:
 pip install --upgrade scikit-image
 
+Installing sklearn
+Error:
+ImportError: No module named sklearn.preprocessing
 
+Fix:
+pip install sklearn
+pip3 install sklearn
 sudo apt-get install python-skimag
+
+Testing HOG Sub-sampling
+Error:
+raise ValueError, "unsupported pickle protocol: %d" % proto
+ValueError: unsupported pickle protocol: 3
+
+Fix:
+Python 2 fails
+Supposed to be resolved by using Python 3.
+Trying python 3. Install pip3 and the other modules.
+sudo apt-get install python3-pip
+
+=================================
+Setting up Python3 environment
+
+sudo apt-get install pip3
+pip3 install matplotlib
+pip3 install opencv-python-headless
+pip3 install scikit-image
+pip3 install sklearn
+
+Error:
+UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+
+Fix:
+sudo apt-get install python3-tk
