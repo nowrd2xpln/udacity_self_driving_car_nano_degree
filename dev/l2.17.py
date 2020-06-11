@@ -53,11 +53,19 @@ lines = cv2.HoughLinesP(masked_edges, rho, theta, threshold, np.array([]),
 for line in lines:
     for x1,y1,x2,y2 in line:
         cv2.line(line_image,(x1,y1),(x2,y2),(255,0,0),10)
+plt.imshow(line_image)
+plt.show()
 
 # Create a "color" binary image to combine with line image
 color_edges = np.dstack((edges, edges, edges))
+plt.imshow(color_edges)
+plt.show()
 
 # Draw the lines on the edge image
 lines_edges = cv2.addWeighted(color_edges, 0.8, line_image, 1, 0)
+plt.imshow(lines_edges)
+plt.show()
+
+lines_edges = cv2.addWeighted(image, 0.8, line_image, 1, 0)
 plt.imshow(lines_edges)
 plt.show()
