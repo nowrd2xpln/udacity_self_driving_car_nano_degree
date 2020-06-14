@@ -7,7 +7,7 @@ import cv2
 
 
 # Read in and grayscale the image
-image = mpimg.imread('exit-ramp.jpg')
+image = mpimg.imread('solidWhiteRight.jpg')
 gray = cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)
 
 # Define a kernel size and apply Gaussian smoothing
@@ -25,14 +25,16 @@ ignore_mask_color = 255
 
 # This time we are defining a four sided polygon to mask
 imshape = image.shape
-pt_topleft = (425, 300)
-pt_topright = (515, 300)
-pt_bottomleft = (0, imshape[0])
-pt_bottomright = (imshape[1]-75, imshape[0])
+pt_topleft = (440, 325)
+pt_topright = (525, 325)
+pt_bottomleft = (100, imshape[0])
+pt_bottomright = (imshape[1]-50, imshape[0])
 
 vertices = np.array([[pt_bottomleft, pt_topleft, pt_topright, pt_bottomright]], dtype=np.int32)
 cv2.fillPoly(mask, vertices, ignore_mask_color)
 masked_edges = cv2.bitwise_and(edges, mask)
+plt.imshow(masked_edges)
+plt.show()
 
 # Define the Hough transform parameters
 # Make a blank the same size as our image to draw on
