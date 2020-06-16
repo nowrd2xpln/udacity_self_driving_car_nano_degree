@@ -1,4 +1,4 @@
-# **Finding Lane Lines on the Road** 
+# **Finding Lane Lines on the Road**
 
 ### Overview
 
@@ -11,11 +11,11 @@ In this project, we learn to apply basic computer vison techniques to find lane 
 5. Apply Hough Transformation
 6. Draw Lane Lines
 
-These steps are implemented in a pipeline, tested on several images, and tuned until properly fitted on the lane lines. Once this initial goal was accomplished, the pipeline needed to be tested against videos which is essentially applying it to a stream of images. 
+These steps are implemented in a pipeline, tested on several images, and tuned until properly fitted on the lane lines. Once this initial goal was accomplished, the pipeline needed to be tested against videos which is essentially applying it to a stream of images.
 
 ### Pipeline
 In my pipeline, I go through several phases in order to identify and track lane lines.
-
+[image2]
 #### Convert to Grayscale
 The first phase of processing an image was converting to gray scale to prepare the image for Canny algorithm to detect edges. This conversion will help discriminate between color changes between the color of the lane lines and road. In addition, it also has the benefit of reducing noise further.
 #### Apply Gaussian smoothing
@@ -29,10 +29,10 @@ In the final stage of the pipeline, a Hough Transform is applied to the image th
 #### Draw Lane Lines
 As part of the last stage, the lanes are drawn on to the image. In order to draw the lines, they need to be sorted in to left/right lane lines, averaged, extrapolated, and finally drawn on to the image.
 
-
 [//]: # (Image References)
 
 [image1]: ./examples/grayscale.jpg "Grayscale"
+[image2]: ./test_images_output/figure_1.png "Grayscale"
 
 ---
 
@@ -40,11 +40,11 @@ As part of the last stage, the lanes are drawn on to the image. In order to draw
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I ....
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+If you'd like to include images to show how the pipeline works, here is how to include an image:
 
 ![alt text][image1]
 
@@ -52,7 +52,7 @@ If you'd like to include images to show how the pipeline works, here is how to i
 ### 2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming would be what would happen when ... 
+One potential shortcoming would be what would happen when ...
 
 Another shortcoming could be ...
 
