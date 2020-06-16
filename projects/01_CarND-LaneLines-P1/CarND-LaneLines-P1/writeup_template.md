@@ -18,7 +18,7 @@ These steps are implemented in a pipeline, tested on several images, and tuned u
 
 ### Pipeline
 In my pipeline, I go through several phases in order to identify and track lane lines.
-[image2]
+![alt text][image2]
 #### Convert to Grayscale
 The first phase of processing an image was converting to gray scale to prepare the image for Canny algorithm to detect edges. This conversion will help discriminate between color changes between the color of the lane lines and road. In addition, it also has the benefit of reducing noise further.
 #### Apply Gaussian smoothing
