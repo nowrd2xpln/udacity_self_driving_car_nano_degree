@@ -1,5 +1,8 @@
 # **Finding Lane Lines on the Road** 
+[//]: # (Image References)
 
+[image1]: ./examples/grayscale.jpg "Grayscale"
+[image2]: ./test_images_output/figure_1.png "Grayscale"
 ### Overview
 
 In this project, we learn to apply basic computer vison techniques to find lane markings on the road. This consists of the following steps:
@@ -29,10 +32,7 @@ In the final stage of the pipeline, a Hough Transform is applied to the image th
 #### Draw Lane Lines
 As part of the last stage, the lanes are drawn on to the image. In order to draw the lines, they need to be sorted in to left/right lane lines, averaged, extrapolated, and finally drawn on to the image.
 
-[//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
-[image2]: ./test_images_output/figure_1.png "Grayscale"
 
 ---
 
