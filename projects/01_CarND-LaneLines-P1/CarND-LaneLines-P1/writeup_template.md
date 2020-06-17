@@ -33,7 +33,7 @@ The fourth phase simply applies a mask that isolate the pixels of interest.
 ![alt-text-2](./test_images_output/mask_solidWhiteCurve.jpg "mask_solidWhiteCurve.jpg")
 #### Apply Hough Transformation
 In the final stage of the pipeline, a Hough Transform is applied to the image that results in extracted lines detected in the masked region from the previous step.
-![alt-text-2](./test_images_output/line_solidWhiteCurve.jpg "line_solidWhiteCurve.jpg")
+![alt-text-2](./test_images_output/lines_solidWhiteCurve.jpg "lines_solidWhiteCurve.jpg")
 #### Draw Lane Lines
 As part of the last stage, the lanes are drawn on to the image. In order to draw the lines, they need to be sorted in to left/right lane lines, averaged, extrapolated, and finally drawn on to the image.
 ![alt-text-2](./test_images_output/weighted_solidWhiteCurve.jpg "weighted_solidWhiteCurve.jpg")
