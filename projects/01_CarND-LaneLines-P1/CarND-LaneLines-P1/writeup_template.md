@@ -38,8 +38,14 @@ The fourth stage simply applies a mask that isolate the pixels of interest. To i
 ![alt-text-2](./test_images_output/mask_solidWhiteCurve.jpg "mask_solidWhiteCurve.jpg")
 
 #### Apply Hough Transformation
-In the final stage of the pipeline, a Hough Transform is applied to the image that results in extracted lines detected in the masked region from the previous step. In order to draw the lines, they need to be sorted in to left/right lane lines, averaged, so the lines can be extrapolated.
+In the final stage of the pipeline, a Hough Transform is applied to the image that results in extracted lines detected in the masked region from the previous step. In order to draw the lines, they need to be sorted in to left/right lane lines, averaged, so the lines can be extrapolated. The wrapper hough_lines(img_mask, rho, theta, threshold, min_line_len, max_line_gap) was called which uses the Probabilistic Hough Line Transformation. This version of the transform is a more efficient, less computationally intensive, and faster implementation of the Standard Hough Transform. Using the following parameters were used to create the output.
+    rho = 1            # distance resolution in pixels of the Hough grid
+    theta = np.pi/180  # angular resolution in radians of the Hough grid
+    threshold = 10     # minimum number of votes (intersections in Hough grid cell)
+    min_line_len = 20  # minimum number of pixels making up a line
+    max_line_gap = 3   # maximum gap in pixels between connectable line segments
 ![alt-text-2](./test_images_output/lines_solidWhiteCurve.jpg "lines_solidWhiteCurve.jpg")
+
 #### Draw Lane Lines
 Once the lane lines are extapolated, the predicted lane lines are drawn and merged on to the original image
 ![alt-text-2](./test_images_output/weighted_solidWhiteCurve.jpg "weighted_solidWhiteCurve.jpg")
