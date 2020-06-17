@@ -21,18 +21,22 @@ In my pipeline, I go through several phases in order to identify and track lane 
 ![alt text][image2]
 #### Convert to Grayscale
 The first phase of processing an image was converting to gray scale to prepare the image for Canny algorithm to detect edges. This conversion will help discriminate between color changes between the color of the lane lines and road. In addition, it also has the benefit of reducing noise further.
-![alt-text-1](./test_images_output/solidWhiteCurve.jpg "solidWhiteCurve.jpg") ![alt-text-2](./test_images_output/gray_solidWhiteCurve.jpg "gray_solidWhiteCurve.jpg")
+![alt-text-1](./examples/solidWhiteCurve.jpg "solidWhiteCurve.jpg") ![alt-text-2](./test_images_output/gray_solidWhiteCurve.jpg "gray_solidWhiteCurve.jpg")
 #### Apply Gaussian smoothing
 The second phase of image processing applies Gaussian smoothing (blurring). It is also used to prepare the image for Canny Edge Detection. This technique will essentialy smoothen edges of an image to further reduce noise in the image. This step reduces the number of lines detected to aid the the next phase in detecting significant lines.
+![alt-text-1](./examples/solidWhiteCurve.jpg "solidWhiteCurve.jpg") ![alt-text-2](./test_images_output/blur_solidWhiteCurve.jpg "blur_solidWhiteCurve.jpg")
 #### Use Canny Edge Detection
 The third phase uses Canny Edge Detection to finds edges. This technique finds strong edges/gradient pixels above a high threshold and rejects if pixels if they are below a low_threshold and intermediate pixels are included only if they are connected to strong edges.
+![alt-text-1](./examples/solidWhiteCurve.jpg "solidWhiteCurve.jpg") ![alt-text-2](./test_images_output/blur_solidWhiteCurve.jpg "edge_solidWhiteCurve.jpg")
 #### Mask region of interest
 The fourth phase simply applies a mask that isolate the pixels of interest.
+![alt-text-1](./examples/solidWhiteCurve.jpg "solidWhiteCurve.jpg") ![alt-text-2](./test_images_output/mask_solidWhiteCurve.jpg "mask_solidWhiteCurve.jpg")
 #### Apply Hough Transformation
 In the final stage of the pipeline, a Hough Transform is applied to the image that results in extracted lines detected in the masked region from the previous step.
+![alt-text-1](./examples/solidWhiteCurve.jpg "solidWhiteCurve.jpg") ![alt-text-2](./test_images_output/edge_solidWhiteCurve.jpg "edge_solidWhiteCurve.jpg")
 #### Draw Lane Lines
 As part of the last stage, the lanes are drawn on to the image. In order to draw the lines, they need to be sorted in to left/right lane lines, averaged, extrapolated, and finally drawn on to the image.
-
+![alt-text-1](./examples/solidWhiteCurve.jpg "solidWhiteCurve.jpg") ![alt-text-2](./test_images_output/weighted_solidWhiteCurve.jpg "weighted_solidWhiteCurve.jpg")
 
 
 ---
