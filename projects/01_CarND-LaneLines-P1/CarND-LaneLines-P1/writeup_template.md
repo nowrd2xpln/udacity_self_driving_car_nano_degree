@@ -21,6 +21,7 @@ In my pipeline, I go through several phases in order to identify and track lane 
 ![alt text][image2]
 #### Convert to Grayscale
 The first phase of processing an image was converting to gray scale to prepare the image for Canny algorithm to detect edges. This conversion will help discriminate between color changes between the color of the lane lines and road. In addition, it also has the benefit of reducing noise further.
+![alt-text-1](./test_images_output/solidWhiteCurve.jpg "solidWhiteCurve.jpg") ![alt-text-2](./test_images_output/gray_solidWhiteCurve.jpg "gray_solidWhiteCurve.jpg")
 #### Apply Gaussian smoothing
 The second phase of image processing applies Gaussian smoothing (blurring). It is also used to prepare the image for Canny Edge Detection. This technique will essentialy smoothen edges of an image to further reduce noise in the image. This step reduces the number of lines detected to aid the the next phase in detecting significant lines.
 #### Use Canny Edge Detection
