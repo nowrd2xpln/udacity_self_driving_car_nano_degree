@@ -50,7 +50,13 @@ In the final stage of the pipeline, a Hough Transform is applied to the image th
 Once the lane lines are extapolated, the predicted lane lines are drawn and merged on to the original image
 ![alt-text-2](./test_images_output/weighted_solidWhiteCurve.jpg "weighted_solidWhiteCurve.jpg")
 
+### Parameter Tuning
+Following the implementation and testing of the pipeline process, lane detection was poor due to initial parameters being tuned for a single different image. The easiest stage to fix first was the region that was masked off. Images lines were clipped off but the solution was to change the verticies/shape of the region but lane detection appeared to be working at this point in time.
 
+After adjusting the masked region for the first image, testing the pipeline on several different images resulted in all the lanes being detected but tracking was shown to be working very poorly. Predicted lane lines were being drawn at dfferent angles. 
+
+
+![alt-text-2](./test_images_output/lines_solidWhiteCurve.jpg "lines_solidWhiteCurve.jpg")
 ---
 
 ### Reflection
