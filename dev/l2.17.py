@@ -54,7 +54,7 @@ lines = cv2.HoughLinesP(masked_edges, rho, theta, threshold, np.array([]),
 # Iterate over the output "lines" and draw lines on a blank image
 for line in lines:
     for x1,y1,x2,y2 in line:
-        cv2.line(line_image,(x1,y1),(x2,y2),(255,0,0),10)
+        cv2.line(line_image,(x1,y1),(x2,y2),(255,0,0),3)
 plt.imshow(line_image)
 plt.show()
 
