@@ -56,7 +56,10 @@ Following the implementation and testing of the pipeline process, lane detection
 After adjusting the masked region for the first image, testing the pipeline on several different images resulted in all the lanes being detected but tracking was shown to be working very poorly. Predicted lane lines were being drawn at dfferent angles. 
 
 
-![alt-text-2](./test_images_output/lines_solidWhiteCurve.jpg "lines_solidWhiteCurve.jpg")
+### Testing on Videos
+
+[![](http://img.youtube.com/vi/pCtFyTbCMwo/0.jpg)](http://www.youtube.com/watch?v=pCtFyTbCMwo "Finding Lane Lines on the Road - solidYellowLeft.mp4")
+[![](http://img.youtube.com/vi/DyS_dR-DsPw/0.jpg)](http://www.youtube.com/watch?v=DyS_dR-DsPw "Finding Lane Lines on the Road - solidWhiteRight.mp4")
 ---
 
 ### Reflection
