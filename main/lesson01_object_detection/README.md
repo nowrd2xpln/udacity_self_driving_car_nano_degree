@@ -99,6 +99,29 @@ Lesson 4: Object Detection
 23. Build a Classifier
 24. Labeled Data
 25. Data Preparation
+
+Lesson 6: Camera Calibration
+1. The Challenges with Cameras
+2. Welcome to Computer Vision
+3. Overview
+4. Getting Started
+5. Distortion Correction
+6. Quiz: Effects of Distortion
+7. Pinhole Camera Model
+8. Quiz: Image Formation
+9. Measuring Distortion
+10. Finding Corners
+11. Calibrating Your Camera
+12. Correcting for Distortion
+13. Lane Curvature
+14. Perspective Transform
+15. Quiz: Curvature and Perspective
+16. Transform a Stop Sign
+17. Intuitions
+18. Undistort and Transform
+19. How I Did It
+20. Coming Up
+
 Need balanced data set or run the risk of classifier trying to predict everything belonging to the majority class.
 
 Need a training set for training and check on unseen examples with test set.
@@ -122,7 +145,7 @@ Extract features from training set and supplying feature vectors to the training
 The training algorithm initializes a model, and tweaks it's parameters using the feature vectors and labels.
 
 27. Parameter Tuning
-Support Vector Machine vehicle detection model tuning involves searching fro a kernel, a gamma value and a C value that minimize predicition error. 
+Support Vector Machine vehicle detection model tuning involves searching fro a kernel, a gamma value and a C value that minimize predicition error.
 Scikit-learn includes two algorithms for auto parameter search, GridSearchCV and RandomizedSearchCV. GridSearchCV works through multiple parameter combinations and cross-validating as it goes. RandomizedSearchCV is similar except it takes a random sample of parameter combinations and is faster.
 GridSearchCV uses 3-fold cross validation to determine the best performing parameter set. It uses accuracy as an error metric by averaging the accuracy for each partition. For every possible parameter combination, GridSearchCV calculates an accuracy score.
 
