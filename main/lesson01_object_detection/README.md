@@ -118,6 +118,9 @@ Lesson 6: Camera Calibration
 15. Quiz: Curvature and Perspective
 16. Transform a Stop Sign
 17. Intuitions
+Camera Calibration - To compute the transformation between 3D object points in the world and 2D image points.
+Distortion Correction - To ensure that the geometrical shape of objects is represented consistently, no matter where they appear in an image.
+Perspective Transform - To transform an image such that we are effectively viewing objects from a different angle or direction.
 18. Undistort and Transform
 19. How I Did It
 20. Coming Up
