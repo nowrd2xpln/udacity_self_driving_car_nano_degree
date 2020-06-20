@@ -14,15 +14,18 @@ image = mpimg.imread('signs_vehicles_xygrad.png')
 # then computes the direction of the gradient
 # and applies a threshold.
 def dir_threshold(img, sobel_kernel=3, thresh=(0, np.pi/2)):
+    # Grayscale
+    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    # Calculate the x and y gradients
+    sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=sobel_kernel)
+    sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=sobel_kernel)
+    # Take the absolute value of the gradient direction,
+    # apply a threshold, and create a binary image result
+    absgraddir = np.arctan2(np.absolute(sobely), np.absolute(sobelx))
+    binary_output =  np.zeros_like(absgraddir)
+    binary_output[(absgraddir >= thresh[0]) & (absgraddir <= thresh[1])] = 1
 
-    # Apply the following steps to img
-    # 1) Convert to grayscale
-    # 2) Take the gradient in x and y separately
-    # 3) Take the absolute value of the x and y gradients
-    # 4) Use np.arctan2(abs_sobely, abs_sobelx) to calculate the direction of the gradient
-    # 5) Create a binary mask where direction thresholds are met
-    # 6) Return this mask as your binary_output image
-    binary_output = np.copy(img) # Remove this line
+    # Return the binary image
     return binary_output
 
 # Run the function
