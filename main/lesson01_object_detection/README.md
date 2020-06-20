@@ -125,6 +125,21 @@ Perspective Transform - To transform an image such that we are effectively viewi
 19. How I Did It
 20. Coming Up
 
+Lesson 7: Gradients and Color Spaces
+1. Gradient Threshold
+2. Sobel Operator
+3. Applying Sobel
+4. Magnitude of the Gradient
+Magnitude of the Gradient
+5. Direction of the Gradient
+6. Combining Thresholds
+7. Color Spaces
+8. Color Thresholding
+9. HLS intuitions
+10. HLS and Color Thresholds
+11. HLS Quiz
+12. Color and Gradient
+
 Need balanced data set or run the risk of classifier trying to predict everything belonging to the majority class.
 
 Need a training set for training and check on unseen examples with test set.
