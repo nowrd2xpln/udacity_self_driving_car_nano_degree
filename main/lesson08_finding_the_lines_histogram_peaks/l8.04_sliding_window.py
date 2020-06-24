@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import numpy as np
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
@@ -46,11 +44,10 @@ def find_lane_pixels(binary_warped):
         # Identify window boundaries in x and y (and right and left)
         win_y_low = binary_warped.shape[0] - (window+1)*window_height
         win_y_high = binary_warped.shape[0] - window*window_height
-        ### TO-DO: Find the four below boundaries of the window ###
-        win_xleft_low = 0  # Update this
-        win_xleft_high = 0  # Update this
-        win_xright_low = 0  # Update this
-        win_xright_high = 0  # Update this
+        win_xleft_low = leftx_current - margin
+        win_xleft_high = leftx_current + margin
+        win_xright_low = rightx_current - margin
+        win_xright_high = rightx_current + margin
 
         # Draw the windows on the visualization image
         cv2.rectangle(out_img,(win_xleft_low,win_y_low),
@@ -58,17 +55,21 @@ def find_lane_pixels(binary_warped):
         cv2.rectangle(out_img,(win_xright_low,win_y_low),
         (win_xright_high,win_y_high),(0,255,0), 2)
 
-        ### TO-DO: Identify the nonzero pixels in x and y within the window ###
-        good_left_inds = None
-        good_right_inds = None
+        # Identify the nonzero pixels in x and y within the window #
+        good_left_inds = ((nonzeroy >= win_y_low) & (nonzeroy < win_y_high) &
+        (nonzerox >= win_xleft_low) &  (nonzerox < win_xleft_high)).nonzero()[0]
+        good_right_inds = ((nonzeroy >= win_y_low) & (nonzeroy < win_y_high) &
+        (nonzerox >= win_xright_low) &  (nonzerox < win_xright_high)).nonzero()[0]
 
         # Append these indices to the lists
         left_lane_inds.append(good_left_inds)
         right_lane_inds.append(good_right_inds)
 
-        ### TO-DO: If you found > minpix pixels, recenter next window ###
-        ### (`right` or `leftx_current`) on their mean position ###
-        pass # Remove this when you add your function
+        # If you found > minpix pixels, recenter next window on their mean position
+        if len(good_left_inds) > minpix:
+            leftx_current = np.int(np.mean(nonzerox[good_left_inds]))
+        if len(good_right_inds) > minpix:
+            rightx_current = np.int(np.mean(nonzerox[good_right_inds]))
 
     # Concatenate the arrays of indices (previously was a list of lists of pixels)
     try:
@@ -91,9 +92,9 @@ def fit_polynomial(binary_warped):
     # Find our lane pixels first
     leftx, lefty, rightx, righty, out_img = find_lane_pixels(binary_warped)
 
-    ### TO-DO: Fit a second order polynomial to each using `np.polyfit` ###
-    left_fit = None
-    right_fit = None
+    # Fit a second order polynomial to each using `np.polyfit`
+    left_fit = np.polyfit(lefty, leftx, 2)
+    right_fit = np.polyfit(righty, rightx, 2)
 
     # Generate x and y values for plotting
     ploty = np.linspace(0, binary_warped.shape[0]-1, binary_warped.shape[0] )
